@@ -1,67 +1,136 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-    --background: #ffffff;
-    --foreground: #171717;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
 body {
-  @apply bg-black text-white font-montserrat min-h-screen;
+  font-family: 'Montserrat', sans-serif;
+  background: #000;
+  min-height: 100vh;
+  color: white;
+  /* center all content and limit its max-width */
+  margin: 0 auto;
+  max-width: 1280px;
+  padding: 0 1rem;         /* horizontal gutter */
   scrollbar-width: thin;
   scrollbar-color: #333 #111;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
-@layer base {
-    /* Apply theme variables to html/body */
-    html {
-      background: var(--background);
-      color: var(--foreground);
-    }
-  
-    /* Override body defaults */
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-    }
-  }
+/* give your main content some top/bottom breathing room */
+main {
+  padding: 4rem 0;         /* 4rem top & bottom */
+}
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --background: #0a0a0a;
-      --foreground: #ededed;
-    }
-  
+/* make each section sit apart */
+section {
+  margin-bottom: 2.5rem;
+}
 
-/* WebKit scrollbar */
-::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: #111; border-radius: 10px; }
-::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
-::-webkit-scrollbar-thumb:hover { background: #444; }
-
-.glass-card {
-  background: rgba(30, 30, 30, 0.7);
-  backdrop-filter: blur(10px);
+/* Hero adjustments */
+.hero-section, .hero {
+  position: relative;
+  height: 420px;           /* match your desired aspect ratio */
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  margin-bottom: 2rem;
 }
 
+/* Dark gradient overlay on hero */
 .hero-gradient {
-  background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+  /* background: linear-gradient(180deg,
+    rgba(0,0,0,0.8) 0%,
+    rgba(0,0,0,0) 100%); */
+  position: absolute;
+  inset: 0;
+  z-index: 10;
 }
 
-.hide-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+/* Button row padding in hero */
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
 }
-.hide-scrollbar::-webkit-scrollbar { display: none; }
 
-.progress-bar { @apply bg-gray-800; }
-.progress-fill { @apply bg-gradient-to-r from-gray-600 to-gray-400; }
+/* Nav tabs container centering */
+nav.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #333;
+  margin-bottom: 2rem;
+}
+
+/* Carousel container */
+.carousel {
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+
+/* Each content‐card now sized uniformly */
+.content-card {
+  flex: 0 0 160px;       /* fixed width */
+  height: 240px;         /* fixed height */
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  transition: transform .3s ease, box-shadow .3s ease;
+  background: #111;
+  margin-right: 1rem;    /* gutter between cards */
+}
+
+.content-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+/* Progress bar sits inside content-card */
+.progress-bar {
+  background: #333;
+  height: 4px;
+  border-radius: 2px;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0.5rem;
+  right: 0.5rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #555, #999);
+}
+
+/* “NEW” badge styling */
 .new-badge {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
   background: linear-gradient(90deg, #222, #444);
   border: 1px solid #666;
+  color: #fff;
+  font-size: 0.65rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
 }
+
+/* Bottom nav spacing so it doesn’t cover content */
+footer {
+  padding-top: 2rem;
+  margin-top: 4rem;
+}
+
+/* Custom scrollbar for WebKit */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #111;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #444;
 }

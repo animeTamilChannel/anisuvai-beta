@@ -4,7 +4,7 @@ const Hero: React.FC = () => (
   <section className="relative rounded-xl overflow-hidden mb-6 h-64">
     <div className="absolute inset-0 hero-gradient z-10" />
     <img
-      src="https://img10.hotstar.com/image/upload/f_auto/sources/r1/cms/prod/160/1741139420160-i"
+      src=""
       alt="Featured Content"
       className="w-full h-full object-cover"
     />
