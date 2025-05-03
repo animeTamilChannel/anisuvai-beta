@@ -1,6 +1,6 @@
 // Search toggle
 const sb = document.querySelector('.search-bar');
-const input = sb.querySelector('input');
+const input = sb.querySelector('.search-bar input');
 sb.addEventListener('click', ()=>{
   sb.style.width = '200px';
   input.style.width = '100px'; input.style.opacity = '1';
@@ -14,7 +14,7 @@ document.addEventListener('click', e=>{
 });
 
 // Carousel drag
-document.querySelectorAll('.carousel').forEach(car=>{
+document.querySelectorAll('flex space-x-3 overflow-x-auto').forEach(tab=>{
   let down=false, startX, scrollLeft;
   car.addEventListener('mousedown', e=>{ down=true; startX=e.pageX - car.offsetLeft; scrollLeft=car.scrollLeft; });
   car.addEventListener('mouseleave', ()=> down=false);
@@ -28,7 +28,7 @@ document.querySelectorAll('.carousel').forEach(car=>{
 });
 
 // Tab activation
-document.querySelectorAll('.tab').forEach(tab=>{
+document.querySelectorAll('.nav-item').forEach(tab=>{
   tab.addEventListener('click', e=>{
     e.preventDefault();
     document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
