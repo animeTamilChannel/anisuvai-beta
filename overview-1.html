@@ -305,9 +305,9 @@
             <i class="fa fa-download text-lg mb-1"></i>
             <span>Channel</span>
         </a>
-        <a href="usingmethods.html" class="flex flex-col items-center text-gray-400 text-xs hover:text-white transition">
-            <i class="fas fa-question text-lg mb-1"></i>
-            <span>Methods</span>
+        <a href="#" class="flex flex-col items-center text-gray-400 text-xs hover:text-white transition">
+                <i class="fas fa-arrow-left text-lg mb-1"></i>
+                <span onclick="goBack()">Go Back</button></span>
         </a>
     </nav>
 
@@ -336,6 +336,10 @@
                 document.querySelector('main').style.opacity = '1';
             }, 300);
         });
+        //back button
+        function goBack() {
+            window.history.back();
+        }
     </script>
 </body>
 </html>
