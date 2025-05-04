@@ -297,27 +297,6 @@ html
     </nav>
 
     <script>
-        // Toggle search bar
-        const searchBar = document.querySelector('.search-bar');
-        const searchInput = document.querySelector('.search-bar input');
-        
-        searchBar.addEventListener('click', () => {
-            searchBar.classList.remove('w-10');
-            searchBar.classList.add('w-64');
-            searchInput.classList.remove('w-0', 'opacity-0');
-            searchInput.classList.add('w-48', 'opacity-100');
-            searchInput.focus();
-        });
-        
-        document.addEventListener('click', (e) => {
-            if (!searchBar.contains(e.target)) {
-                searchBar.classList.add('w-10');
-                searchBar.classList.remove('w-64');
-                searchInput.classList.add('w-0', 'opacity-0');
-                searchInput.classList.remove('w-48', 'opacity-100');
-            }
-        });
-        
         // Simple carousel functionality
         const carousels = document.querySelectorAll('[class*="flex space-x-3 overflow-x-auto"]');
         
