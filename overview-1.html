@@ -315,19 +315,19 @@
         // Simple interaction for the like button
         document.addEventListener('DOMContentLoaded', function() {
             const likeBtn = document.querySelector('.fa-heart').parentElement;
-            let liked = false;
+            let like = false;
             
             likeBtn.addEventListener('click', function() {
-                liked = !liked;
+                like = !like;
                 const heartIcon = this.querySelector('.fa-heart');
                 const likeText = this.querySelector('span:last-child');
                 
-                if (liked) {
-                    heartIcon.style.color = '#ef4444'; // red-500
-                    likeText.textContent = 'Liked';
-                } else {
-                    heartIcon.style.color = 'gray'; // Keep red but change text
+                if (like) {
+                    heartIcon.style.color = 'gray'; // red-500
                     likeText.textContent = 'Like';
+                } else {
+                    heartIcon.style.color = '#ef4444';// Keep red but change text
+                    likeText.textContent = 'Liked';
                 }
             });
             
